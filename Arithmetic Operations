@@ -1,0 +1,12 @@
+a <- 8
+b <- 2
+sum <- a + b
+print(sum)  
+diff <- a - b
+print(diff)  
+product <- a * b
+print(product) 
+quotient <- a / b
+print(quotient)  
+power <- a ^ b
+print(power)  
