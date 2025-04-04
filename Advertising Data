@@ -1,0 +1,7 @@
+advertising_data <- data.frame(
+  Month = c(1, 2, 3, 4, 5, 6),
+  Spends = c(1000, 4000, 5000, 4500, 3000, 4000),
+  Sales = c(9914, 40487, 54324, 50044, 34719, 42551)
+)
+print("Advertising Data Frame:")
+print(advertising_data)
