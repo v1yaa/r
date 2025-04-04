@@ -1,0 +1,11 @@
+data("mtcars")
+model <- lm(mpg ~ wt + hp, data = mtcars)
+summary(model)
+library(ggplot2)
+ggplot(mtcars, aes(x = wt, y = mpg, color = hp)) +
+  geom_point(size = 3) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "blue") +
+  ggtitle("Multiple Regression: Predicting MPG") +
+  xlab("Weight (1000 lbs)") +
+  ylab("Miles Per Gallon (mpg)") +
+  theme_minimal()
