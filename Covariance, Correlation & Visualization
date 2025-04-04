@@ -1,0 +1,17 @@
+library(ggplot2)
+set.seed(123)  
+data <- data.frame(
+  Variable_X = c(10, 15, 20, 25, 30, 35, 40, 45, 50, 55),  
+  Variable_Y = c(22, 29, 35, 45, 50, 60, 65, 72, 78, 85) 
+)
+cov_xy <- cov(data$Variable_X, data$Variable_Y)
+cor_xy <- cor(data$Variable_X, data$Variable_Y)
+cat("Covariance between Variable_X and Variable_Y:", cov_xy, "\n")
+cat("Correlation between Variable_X and Variable_Y:", cor_xy, "\n")
+ggplot(data, aes(x = Variable_X, y = Variable_Y)) +
+  geom_point(color = "lightblue", size = 3) +  
+  geom_smooth(method = "lm", se = FALSE, color = "pink") +  
+  labs(title = "Scatter Plot of Variable_X vs. Variable_Y",
+       x = "Variable X",
+       y = "Variable Y") +
+  theme_minimal()
