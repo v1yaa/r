@@ -1,0 +1,6 @@
+data(iris)
+quartiles <- quantile(iris$Sepal.Width, probs = c(0.25, 0.75))
+Q1 <- quartiles[1]  # First quartile (25th percentile)
+Q3 <- quartiles[2]  # Third quartile (75th percentile)
+cat("First Quartile (Q1) of Sepal.Width:", Q1, "\n")
+cat("Third Quartile (Q3) of Sepal.Width:", Q3, "\n")
