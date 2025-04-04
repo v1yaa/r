@@ -1,0 +1,6 @@
+vec1 <- c(1, 2, 3, 4, 5, 6)
+vec2 <- c(7, 8, 9, 10, 11, 12)
+combined_vec <- c(vec1, vec2)
+my_array <- array(combined_vec, dim = c(3, 3, 2))
+print("3x3x2 Array:")
+print(my_array)
