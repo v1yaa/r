@@ -1,0 +1,7 @@
+numbers <- c(5, 12, 18, 25, 30, 35, 42, 50, 60, 75)
+logical_vector <- (numbers > 20 & numbers %% 2 == 0) | (numbers < 10)
+print("Logical vector (Numbers > 20 AND even) OR (Numbers < 10):")
+print(logical_vector)
+filtered_numbers <- numbers[logical_vector]
+print("Filtered numbers:")
+print(filtered_numbers)
