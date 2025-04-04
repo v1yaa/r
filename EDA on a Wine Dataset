@@ -1,0 +1,32 @@
+library(ggplot2)     
+library(dplyr)
+library(corrplot)    
+library(ggcorrplot)
+library(tidyr)       
+wine_data <- read.csv("winequality-red.csv", sep = ";")  # Update the path if needed
+cat("Summary of the dataset:\n")
+summary(wine_data)
+cat("\nStructure of the dataset:\n")
+str(wine_data)
+missing_values <- colSums(is.na(wine_data))
+cat("\nMissing values in each column:\n")
+print(missing_values)
+wine_data <- wine_data %>% drop_na()
+ggplot(wine_data, aes(x = alcohol)) +
+  geom_histogram(binwidth = 0.5, fill = "blue", color = "black", alpha = 0.7) +
+  labs(title = "Distribution of Alcohol Content", x = "Alcohol", y = "Frequency") +
+  theme_minimal()
+ggplot(wine_data, aes(x = quality)) +
+  geom_bar(fill = "red", color = "black", alpha = 0.7) +
+  labs(title = "Distribution of Wine Quality", x = "Quality", y = "Count") +
+  theme_minimal()
+cor_matrix <- cor(wine_data)
+ggcorrplot(cor_matrix, lab = TRUE, title = "Correlation Heatmap of Wine Attributes")
+pairs(wine_data[, c("alcohol", "citric.acid", "density", "quality")], 
+      main = "Pair Plot of Selected Wine Features", col = "blue")
+ggplot(wine_data, aes(x = factor(quality), y = alcohol, fill = factor(quality))) +
+  geom_boxplot() +
+  labs(title = "Alcohol Content by Wine Quality", x = "Quality", y = "Alcohol Content") +
+  theme_minimal()
+
+cat("\nExploratory Data Analysis (EDA) completed successfully!\n")
