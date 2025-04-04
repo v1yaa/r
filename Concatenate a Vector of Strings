@@ -1,0 +1,7 @@
+words <- c("Hello", "World", "from", "R")
+concatenated_string <- paste(words, collapse = " ")
+print("Concatenated string with spaces:")
+print(concatenated_string)
+concatenated_string_no_space <- paste0(words, collapse = "")
+print("Concatenated string without spaces:")
+print(concatenated_string_no_space)
