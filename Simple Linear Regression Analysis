@@ -1,0 +1,11 @@
+library(ggplot2)
+data(mtcars)
+model <- lm(mpg ~ wt, data = mtcars)
+summary(model)
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "midnightblue", size = 3, alpha = 0.6) + 
+  geom_smooth(method = "lm", color = "lightskyblue", se = FALSE) +  
+  labs(title = "Linear Regression: MPG vs Weight",
+       x = "Weight (1000 lbs)",
+       y = "Miles Per Gallon (MPG)") +
+  theme_minimal()
