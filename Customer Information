@@ -1,0 +1,16 @@
+customer_info <- data.frame(
+  CustomerID = c(101, 102, 103, 104),
+  Name = c("Alice", "Bob", "Charlie", "David"),
+  Email = c("alice@example.com", "bob@example.com", "charlie@example.com", "david@example.com")
+)
+purchase_history <- data.frame(
+  CustomerID = c(101, 102, 104, 105),  # Note: ID 105 is not in customer_info
+  Product = c("Laptop", "Smartphone", "Tablet", "Headphones"),
+  Amount = c(800, 500, 300, 100)
+)
+merged_data <- merge(customer_info, purchase_history, by = "CustomerID")
+print("Merged Data (Inner Join):")
+print(merged_data)
+merged_left <- merge(customer_info, purchase_history, by = "CustomerID", all.x = TRUE)
+print("Merged Data (Left Join):")
+print(merged_left)
