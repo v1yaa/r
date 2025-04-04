@@ -1,0 +1,7 @@
+rectangle_area <- function(length = 5, width = 3) {
+  return(length * width)  
+}
+default_area <- rectangle_area()
+cat("Area with default values:", default_area, "\n")
+custom_area <- rectangle_area(8, 4)
+cat("Area with custom values (8x4):", custom_area, "\n")
