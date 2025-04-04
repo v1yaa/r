@@ -1,0 +1,20 @@
+library(ggplot2)
+set.seed(123)  # For reproducibility
+student_scores <- data.frame(
+  Class = rep(c("Class A", "Class B", "Class C", "Class D", "Class E"), each = 20),
+  Score = c(
+    rnorm(20, mean = 75, sd = 10),  
+    rnorm(20, mean = 80, sd = 12), 
+    rnorm(20, mean = 70, sd = 8),  
+    rnorm(20, mean = 85, sd = 9),   
+    rnorm(20, mean = 78, sd = 11)   
+  )
+)
+ggplot(student_scores, aes(x = Class, y = Score, fill = Class)) +
+  geom_boxplot(outlier.color = "red", outlier.shape = 16, outlier.size = 3) +  
+  scale_fill_brewer(palette = "Set2") +  
+  labs(title = "Comparison of Student Scores Across Classes",
+       x = "Class",
+       y = "Score") +
+  theme_minimal() + 
+  theme(legend.position = "none")
