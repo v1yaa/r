@@ -1,0 +1,6 @@
+customer_data <- data.frame(
+  Name = c("John", "Jane", "Doe", "Mary"),
+  Age = c(25, 30, 35, 40),
+  Gender = c("M", "F", "M", "F")
+)
+print(customer_data)
