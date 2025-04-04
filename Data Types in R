@@ -1,0 +1,15 @@
+num_val <- 12.5     
+int_val <- 10L      
+char_val <- "100"   
+log_val <- TRUE     
+comp_val <- 2 + 3i  
+num_to_int <- as.integer(num_val)   
+char_to_num <- as.numeric(char_val) 
+log_to_num <- as.numeric(log_val)   
+int_to_char <- as.character(int_val) 
+num_to_comp <- as.complex(num_val)  
+print(paste("Numeric to Integer:", num_to_int))
+print(paste("Character to Numeric:", char_to_num))
+print(paste("Logical to Numeric:", log_to_num))
+print(paste("Integer to Character:", int_to_char))
+print(paste("Numeric to Complex:", num_to_comp))
