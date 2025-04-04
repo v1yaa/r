@@ -1,0 +1,11 @@
+library(ggplot2)
+set.seed(123)  
+data <- data.frame(
+  Score = rnorm(200, mean = 75, sd = 10)  
+)
+ggplot(data, aes(x = Score)) +
+  geom_density(fill = "thistle", alpha = 0.6, color = "indianred") +  # Density plot
+  labs(title = "Density Plot of Student Scores",
+       x = "Score",
+       y = "Density") +
+  theme_minimal()
