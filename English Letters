@@ -1,0 +1,9 @@
+first_10_lower <- letters[1:10]
+print("First 10 English letters in lowercase:")
+print(first_10_lower)
+last_10_upper <- LETTERS[17:26]
+print("Last 10 English letters in uppercase:")
+print(last_10_upper)
+subset_upper <- LETTERS[22:24]
+print("Letters from 22nd to 24th position in uppercase:")
+print(subset_upper)
