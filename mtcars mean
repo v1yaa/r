@@ -1,0 +1,3 @@
+data(mtcars)
+mean_mpg <- mean(mtcars$mpg)
+cat("Mean of mpg in mtcars dataset:", mean_mpg, "\n")
