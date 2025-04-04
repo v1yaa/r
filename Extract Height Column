@@ -1,0 +1,6 @@
+df <- data.frame(
+  age = c(25, 30, 35, 40),
+  height = c(170, 165, 180, 175) 
+)
+height_vector <- df$height
+print(height_vector)
