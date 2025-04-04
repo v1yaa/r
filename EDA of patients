@@ -1,0 +1,29 @@
+library(dplyr)
+library(moments)
+patients_data <- data.frame(
+  Age = c(25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95),
+  Blood_Pressure = c(120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190)
+)
+get_mode <- function(v) {
+  uniq_vals <- unique(v)
+  freq <- table(v)
+  mode_vals <- uniq_vals[freq == max(freq)]
+  return(mode_vals)
+}
+eda_summary <- patients_data %>%
+  summarise(
+    Mean_Age = mean(Age),
+    Median_Age = median(Age),
+    Mode_Age = toString(get_mode(Age)),
+    SD_Age = sd(Age),
+    Skewness_Age = skewness(Age),
+    Kurtosis_Age = kurtosis(Age),
+    
+    Mean_BP = mean(Blood_Pressure),
+    Median_BP = median(Blood_Pressure),
+    Mode_BP = toString(get_mode(Blood_Pressure)),
+    SD_BP = sd(Blood_Pressure),
+    Skewness_BP = skewness(Blood_Pressure),
+    Kurtosis_BP = kurtosis(Blood_Pressure)
+  )
+print(eda_summary)
