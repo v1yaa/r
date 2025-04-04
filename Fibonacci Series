@@ -1,0 +1,13 @@
+fibonacci_seq <- function(limit) {
+  if (limit < 1) return("Error: Enter a positive number.")
+  fib <- c(0, 1)  # Initialize sequence
+  while (TRUE) {
+    next_num <- tail(fib, 1) + tail(fib, 2)[1]
+    if (next_num > limit) break
+    fib <- c(fib, next_num)
+  }
+  cat("Fibonacci Sequence:", fib, "\n")
+  cat("Length of Sequence:", length(fib), "\n")
+}
+num <- suppressWarnings(as.integer(readline("Enter a positive number: ")))
+fibonacci_seq(num)
