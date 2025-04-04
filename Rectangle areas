@@ -1,0 +1,13 @@
+library(ggplot2)
+calculate_area <- function(length, width) {
+  return(length * width)
+}
+lengths <- rep(1:10, each = 10)  
+widths <- rep(1:10, times = 10) 
+areas <- mapply(calculate_area, lengths, widths)  # Compute area
+rectangles <- data.frame(Length = lengths, Width = widths, Area = areas)
+ggplot(rectangles, aes(x = Length, y = Width, fill = Area)) +
+  geom_tile() +
+  scale_fill_gradient(low = "lightblue", high = "red") +
+  labs(title = "Rectangle Areas", x = "Length", y = "Width", fill = "Area") +
+  theme_minimal()
