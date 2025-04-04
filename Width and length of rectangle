@@ -1,0 +1,11 @@
+calculate_area <- function(length, width) {
+  return(length * width)
+}
+rectangles <- data.frame(
+  length = c(5, 8, NA, 6, 10),
+  width = c(3, NA, 4, 7, 2)
+)
+rectangles$length[is.na(rectangles$length)] <- 1
+rectangles$width[is.na(rectangles$width)] <- 1
+rectangles$area <- mapply(calculate_area, rectangles$length, rectangles$width)
+print(rectangles) 
