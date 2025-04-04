@@ -1,0 +1,16 @@
+employee_data <- data.frame(
+  EmployeeID = 1:10, 
+  Salary = c(50000, 55000, 60000, 52000, 70000, 45000, 48000, 53000, 60000, 50000) # Salary in dollars
+)
+print("Employee Salary Data:")
+print(employee_data)
+mean_salary <- mean(employee_data$Salary)
+print(paste("Mean Salary: $", mean_salary))
+median_salary <- median(employee_data$Salary)
+print(paste("Median Salary: $", median_salary))
+get_mode <- function(x) {
+  uniq_vals <- unique(x)
+  uniq_vals[which.max(tabulate(match(x, uniq_vals)))]
+}
+mode_salary <- get_mode(employee_data$Salary)
+print(paste("Mode Salary: $", mode_salary))
