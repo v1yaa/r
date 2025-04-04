@@ -1,0 +1,8 @@
+data_set <- c(6, 47, 49, 15, 43, 41, 7, 39, 43, 41, 36)
+print(quantile(data_set))  
+boxplot(data_set, main = "Boxplot", col = "lightblue", notch = TRUE, horizontal = TRUE)
+
+temp <- c(35, 42, 38, 25, 28, 36, 40)
+days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+barplot(temp, names.arg = days, col = "lightcoral", main = "Max Temperature", xlab = "Days", ylab = "°C")
+legend("topright", legend = "Temperature (°C)", fill = "lightcoral", box.lty = 0)
