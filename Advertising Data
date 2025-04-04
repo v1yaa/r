@@ -5,3 +5,11 @@ advertising_data <- data.frame(
 )
 print("Advertising Data Frame:")
 print(advertising_data)
+
+ggplot(advertising_data, aes(x = Spends, y = Sales)) +
+  geom_point(color = "lightgreen", size = 3) +  
+  geom_smooth(method = "lm", color = "violet", se = FALSE) +  
+  labs(title = "Sales vs. Advertising Spend",
+       x = "Advertising Spend ($)",
+       y = "Sales Revenue ($)") +
+  theme_minimal()
