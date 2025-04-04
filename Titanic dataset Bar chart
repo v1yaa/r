@@ -1,0 +1,23 @@
+library(ggplot2)
+library(dplyr)
+titanic <- as.data.frame(Titanic)  # Convert to a data frame
+titanic <- titanic[rep(1:nrow(titanic), titanic$Freq), -5]  # Expand rows by frequency
+ggplot(titanic, aes(x = Class, fill = factor(Survived))) +
+  geom_bar(position = "dodge") +
+  labs(title = "Survival Count Based on Passenger Class",
+       x = "Passenger Class",
+       y = "Count",
+       fill = "Survived") +
+  scale_fill_manual(values = c("red", "blue")) +
+  theme_minimal()
+ggplot(titanic, aes(x = Class, fill = factor(Sex))) +
+  geom_bar(position = "dodge") +
+  labs(title = "Survival Count Based on Class and Gender",
+       x = "Passenger Class",
+       y = "Count",
+       fill = "Gender") +
+  scale_fill_manual(values = c("pink", "lightblue")) +
+  theme_minimal()
+if ("datasets" %in% installed.packages()) {
+  data("Titanic")
+}
