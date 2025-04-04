@@ -1,0 +1,8 @@
+df <- data.frame(Name = c("Alice", "Bob", "Charlie", "David"),
+                 Age = c(25, 35, 40, 28),
+                 Score = c(85, 90, 75, 88))
+for (i in 1:nrow(df)) {
+  if (df$Age[i] > 30) {
+    print(df[i, ]) 
+  }
+}
