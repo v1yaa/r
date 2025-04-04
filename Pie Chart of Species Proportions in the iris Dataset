@@ -1,0 +1,10 @@
+library(ggplot2)
+data(iris)
+species_count <- table(iris$Species)
+species_df <- as.data.frame(species_count)
+colnames(species_df) <- c("Species", "Count")
+ggplot(species_df, aes(x = "", y = Count, fill = Species)) +
+  geom_bar(stat = "identity", width = 1) +  
+  coord_polar(theta = "y") +  
+  labs(title = "Proportion of Species in the Iris Dataset") +
+  theme_void()  
