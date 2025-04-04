@@ -1,0 +1,15 @@
+data(ChickWeight)
+library(ggplot2)
+ggplot(ChickWeight, aes(x = weight)) +
+  geom_histogram(binwidth = 25, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Distribution of Chick Weights", x = "Weight (grams)", y = "Frequency") +
+  theme_minimal()
+missing_values <- sum(is.na(ChickWeight$weight))
+cat("Number of missing values in weight:", missing_values, "\n")
+median_weight <- median(ChickWeight$weight, na.rm = TRUE)
+cat("Median weight of chickens:", median_weight, "\n")
+ggplot(ChickWeight, aes(y = weight)) +
+  geom_boxplot(fill = "orange", color = "black", alpha = 0.7) +
+  labs(title = "Boxplot of Chick Weights", y = "Weight (grams)") +
+  geom_hline(yintercept = median_weight, linetype = "dashed", color = "red", size = 1) +
+  theme_minimal()
