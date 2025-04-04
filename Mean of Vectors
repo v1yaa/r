@@ -1,0 +1,8 @@
+vectors <- list(c(1, 2, 3, "a"), c(10, 20, 30, NA), c(5, 15, 25, "b", 35), c(100, 200, 300))
+calculate_mean <- function(vec) {
+  numeric_vec <- as.numeric(vec)  
+  mean_val <- mean(numeric_vec, na.rm = TRUE)
+  return(mean_val)
+}
+for (i in seq_along(vectors)) {
+  cat("Mean of vector", i, ":", calculate_mean(vectors[[i]]), "\n")
