@@ -1,0 +1,17 @@
+library(ggplot2)
+library(dplyr)
+titanic_df <- as.data.frame(Titanic)
+ggplot(titanic_df, aes(x = Class, y = Freq, fill = Survived)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Survival Count by Passenger Class", x = "Passenger Class", y = "Count") +
+  theme_minimal()
+ggplot(titanic_df, aes(x = Class, y = Freq, fill = Survived)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~Sex) +  # Split by Gender
+  labs(title = "Survival Count by Passenger Class and Gender", x = "Passenger Class", y = "Count") +
+  theme_minimal()
+if (!requireNamespace("datasets", quietly = TRUE)) install.packages("datasets")
+data("Titanic")
+if (!requireNamespace("titanic", quietly = TRUE)) install.packages("titanic")
+library(titanic)
+titanic_data <- titanic::titanic_train  
