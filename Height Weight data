@@ -1,0 +1,14 @@
+library(ggplot2)
+height <- c(151, 174, 138, 186, 128, 136, 179, 163, 152, 131)
+weight <- c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48)
+data <- data.frame(Height = height, Weight = weight)
+print("Height-Weight Data:")
+print(data)
+
+ggplot(data, aes(x = Height, y = Weight)) +
+  geom_point(color = "blue", size = 3) +  # Scatter plot points
+  geom_smooth(method = "lm", color = "red", se = FALSE) +  # Regression line
+  labs(title = "Height vs. Weight Regression Model",
+       x = "Height (cm)",
+       y = "Weight (kg)") +
+  theme_minimal()
