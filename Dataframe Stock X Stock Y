@@ -1,0 +1,8 @@
+stock_data <- data.frame(
+  Stock_X = c(0.02, 0.05, -0.01, 0.04, 0.03, 0.06, -0.02, 0.07, 0.01, 0.05),
+  Stock_Y = c(0.03, 0.04, 0.00, 0.05, 0.02, 0.07, -0.01, 0.06, 0.02, 0.04)
+)
+cov_stocks <- cov(stock_data$Stock_X, stock_data$Stock_Y)
+cor_stocks <- cor(stock_data$Stock_X, stock_data$Stock_Y)
+cat("Covariance between Stock X and Stock Y:", cov_stocks, "\n")
+cat("Correlation between Stock X and Stock Y:", cor_stocks, "\n")
