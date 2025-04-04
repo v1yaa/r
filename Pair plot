@@ -1,0 +1,22 @@
+library(GGally)
+library(ggplot2)
+set.seed(123)
+data <- data.frame(
+  Height = rnorm(100, mean = 170, sd = 10),  
+  Weight = rnorm(100, mean = 70, sd = 15), 
+  Age = rnorm(100, mean = 35, sd = 10),  
+  Income = rnorm(100, mean = 50000, sd = 15000) 
+)
+custom_theme <- theme(
+  panel.background = element_rect(fill = "gray95"), 
+  panel.grid.major = element_line(color = "white"),
+  panel.border = element_rect(color = "black", fill = NA),
+  strip.background = element_rect(fill = "skyblue"),
+  axis.text = element_text(color = "black")
+)
+ggpairs(data, 
+        upper = list(continuous = wrap("cor", size = 4, color = "red")), 
+        lower = list(continuous = wrap("smooth", color = "pink")), 
+        diag = list(continuous = wrap("barDiag", fill = "mediumpurple")), 
+        title = "Pair Plot: Relationships Between Variables") +
+  custom_theme  
