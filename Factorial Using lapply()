@@ -1,0 +1,7 @@
+factorial_recursive <- function(n) {
+  if (n == 0) return(1) 
+  return(n * factorial_recursive(n - 1))  
+}
+num_vector <- c(3, 5, 7, 0)  
+factorials <- sapply(num_vector, factorial_recursive)
+print(factorials)
