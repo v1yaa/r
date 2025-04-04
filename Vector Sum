@@ -1,0 +1,5 @@
+mat <- matrix(1:9, nrow = 3)
+print(mat[2, ])
+print(as.vector(mat))
+print(rowSums(mat))
+print(colSums(mat))
