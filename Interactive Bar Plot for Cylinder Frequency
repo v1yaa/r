@@ -1,0 +1,15 @@
+library(plotly)
+library(dplyr)
+data(mtcars)
+cyl_freq <- mtcars %>%
+  count(cyl) 
+plot <- plot_ly(cyl_freq, 
+                x = ~cyl, 
+                y = ~n, 
+                type = "bar", 
+                marker = list(color = "plum")) %>%
+  layout(title = "Frequency of Cylinders in mtcars Dataset",
+         xaxis = list(title = "Number of Cylinders"),
+         yaxis = list(title = "Frequency"),
+         bargap = 0.2)
+plot
