@@ -1,0 +1,15 @@
+employees <- data.frame(
+  ID = c(101, 102, 103),
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(25, 30, 28),
+  Salary = c(50000, 60000, 55000)
+)
+employees$Department <- c("HR", "IT", "Finance")
+high_salary <- subset(employees, Salary > 55000)
+sorted_employees <- employees[order(employees$Salary), ]
+print("Original Data Frame:")
+print(employees)
+print("Employees with Salary greater than 55,000:")
+print(high_salary)
+print("Data Frame sorted by Salary:")
+print(sorted_employees)
