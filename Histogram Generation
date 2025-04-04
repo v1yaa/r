@@ -1,0 +1,15 @@
+set.seed(123)  
+scores <- rnorm(100, mean = 75, sd = 10)  
+hist(scores, 
+     main = "Histogram of Student Scores", 
+     xlab = "Scores", 
+     ylab = "Frequency", 
+     col = "skyblue", 
+     border = "black")
+hist(scores, 
+     breaks = 15,  
+     main = "Histogram with 15 Bins", 
+     xlab = "Scores", 
+     ylab = "Frequency", 
+     col = "lightgreen", 
+     border = "black")
