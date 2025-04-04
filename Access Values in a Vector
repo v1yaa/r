@@ -1,0 +1,10 @@
+print("Original Vector:")
+print(numbers)
+print("First element:")
+print(numbers[1])  # First element
+print("Last element:")
+print(numbers[length(numbers)])  # Last element
+print("Elements from index 2 to 4:")
+print(numbers[2:4])  # Elements from index 2 to 4
+print("All elements except the first:")
+print(numbers[-1])  # All elements except the first
