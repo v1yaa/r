@@ -1,0 +1,22 @@
+daily_temps <- c(22, 24, 19, 25, 21, 20, 23, 26, 28, 22, 
+                 24, 23, 27, 21, 19, 20, 22, 24, 25, 26, 
+                 23, 22, 21, 27, 28, 25, 24, 23, 26, 22)
+print("Daily Temperature Data:")
+print(daily_temps)
+mean_temp <- mean(daily_temps)
+print(paste("Mean Temperature: ", round(mean_temp, 2), "°C"))
+median_temp <- median(daily_temps)
+print(paste("Median Temperature: ", median_temp, "°C"))
+get_mode <- function(x) {
+  uniq_vals <- unique(x)
+  uniq_vals[which.max(tabulate(match(x, uniq_vals)))]
+}
+mode_temp <- get_mode(daily_temps)
+print(paste("Mode Temperature: ", mode_temp, "°C"))
+range_temp <- range(daily_temps)
+temp_range <- diff(range_temp)  # Difference between max and min
+print(paste("Temperature Range: ", temp_range, "°C"))
+iqr_temp <- IQR(daily_temps)
+print(paste("Interquartile Range (IQR): ", iqr_temp, "°C"))
+std_dev_temp <- sd(daily_temps)
+print(paste("Standard Deviation: ", round(std_dev_temp, 2), "°C"))
