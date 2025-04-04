@@ -1,0 +1,10 @@
+students <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", "David"),
+  Attendance = c(TRUE, FALSE, TRUE, FALSE),  # TRUE if attendance is met
+  Exam_Passed = c(FALSE, TRUE, TRUE, FALSE)  # TRUE if exam is passed
+)
+for (i in 1:nrow(students)) {
+  if (students$Attendance[i] || students$Exam_Passed[i]) {
+    cat(students$Name[i], "has met at least one requirement.\n")
+  }
+}
