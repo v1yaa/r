@@ -1,0 +1,18 @@
+product_names <- c("Laptop", "Smartphone", "Headphones", "Tablet", "Smartwatch")
+product_prices <- c(800, 500, 100, 300, 200)  # Prices in dollars
+product_quantities <- c(10, 25, 50, 15, 30)   # Quantities in stock
+product_data <- data.frame(
+  Name = product_names,
+  Price = product_prices,
+  Quantity = product_quantities
+)
+print("Product Data:")
+print(product_data)
+average_price <- mean(product_data$Price)
+print(paste("Average Price: $", round(average_price, 2)))
+high_stock_products <- product_data$Name[product_data$Quantity > 20]
+print("Products with stock greater than 20:")
+print(high_stock_products)
+smartphone_info <- product_data[product_data$Name == "Smartphone", ]
+print("Details of Smartphone:")
+print(smartphone_info)
