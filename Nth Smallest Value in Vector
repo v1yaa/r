@@ -1,0 +1,7 @@
+nth_smallest <- function(vec, n) {
+  sorted_vec <- sort(vec)  
+  return(sorted_vec[n])   
+}
+numbers <- c(15, 42, 8, 23, 4, 16, 50)
+N <- 3  
+print(paste("The", N, "th smallest value is:", nth_smallest(numbers, N)))
