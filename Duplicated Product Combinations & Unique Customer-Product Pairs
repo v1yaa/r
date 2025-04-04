@@ -1,0 +1,9 @@
+customers <- c("Alice", "Bob", "Alice", "Charlie", "Bob", "Alice", "Charlie")
+products <- c("Laptop", "Phone", "Laptop", "Tablet", "Phone", "Tablet", "Tablet")
+df <- data.frame(Customer = customers, Product = products)
+duplicates <- df[duplicated(df), ]  # Find duplicates
+unique_pairs <- unique(df)  # Get unique customer-product pairs
+cat("Duplicated Product Combinations:\n")
+print(duplicates)
+cat("\nUnique Customer-Product Pairs:\n")
+print(unique_pairs)
