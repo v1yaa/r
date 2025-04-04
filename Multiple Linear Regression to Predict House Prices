@@ -1,0 +1,8 @@
+library(ggplot2)
+house_data <- data.frame(
+  Area = c(1500, 1800, 2400, 3000, 3500, 4000, 1200, 2500, 2700, 3200),
+  Bedrooms = c(3, 4, 3, 5, 4, 6, 2, 3, 4, 5),
+  Price = c(300000, 350000, 450000, 550000, 600000, 700000, 250000, 480000, 520000, 580000)
+)
+model <- lm(Price ~ Area + Bedrooms, data = house_data)
+summary(model)
