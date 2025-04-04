@@ -1,0 +1,13 @@
+library(nnet)
+library(caret)  
+data("iris")
+set.seed(123) 
+trainIndex <- createDataPartition(iris$Species, p = 0.8, list = FALSE)
+trainData <- iris[trainIndex, ]  
+testData <- iris[-trainIndex, ]  
+model <- multinom(Species ~ Petal.Length + Petal.Width, data = trainData)
+pred_probs <- predict(model, testData, type = "prob")
+print(head(pred_probs))  
+pred_species <- predict(model, testData)
+conf_matrix <- confusionMatrix(pred_species, testData$Species)
+print(conf_matrix)
