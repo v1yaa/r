@@ -1,0 +1,9 @@
+17. Categorizing Fruits, Vegetables & Electronics
+items_list <- list(
+  Fruits = c("Apple", "Banana", "Orange"),
+  Vegetables = c("Carrot", "Spinach", "Potato", "Tomato"),
+  Electronics = c("Laptop", "Phone")
+)
+for (category in names(items_list)) {
+  cat(category, "has", length(items_list[[category]]), "items.\n")
+}
