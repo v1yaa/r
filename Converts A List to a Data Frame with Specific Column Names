@@ -1,0 +1,13 @@
+my_list <- list(
+  c("John", "Alice", "Bob"),
+  c(25, 30, 22),
+  c("M", "F", "M")
+)
+df <- data.frame(
+  Name = my_list[[1]],
+  Age = my_list[[2]],
+  Gender = my_list[[3]],
+  stringsAsFactors = FALSE
+)
+print("Converted Data Frame:")
+print(df)
