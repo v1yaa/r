@@ -1,0 +1,16 @@
+factorial_calc <- function(n) {
+  if (!is.numeric(n) || n < 0 || floor(n) != n) {
+    return("Error: Please enter a non-negative integer.")
+  } else if (n == 0) {
+    return(1) 
+  } else {
+    fact <- 1
+    for (i in 1:n) {
+      fact <- fact * i
+    }
+    return(fact)
+  }
+}
+num <- as.integer(readline("Enter a non-negative integer: "))
+result <- factorial_calc(num)
+cat("Factorial:", result, "\n")
