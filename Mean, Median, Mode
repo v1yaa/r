@@ -1,0 +1,11 @@
+calculate_stats <- function(vec) {
+  mean_val <- mean(vec, na.rm = TRUE)    # Calculate mean
+  median_val <- median(vec, na.rm = TRUE)  # Calculate median
+  unique_vals <- unique(vec)
+  mode_val <- unique_vals[which.max(tabulate(match(vec, unique_vals)))]
+  
+  return(list(Mean = mean_val, Median = median_val, Mode = mode_val))
+}
+num_vec <- c(1, 2, 2, 3, 4, 4, 4, 5, 6)
+stats <- calculate_stats(num_vec)
+print(stats)
