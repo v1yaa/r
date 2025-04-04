@@ -1,0 +1,18 @@
+library(ggplot2)
+exam_scores <- data.frame(
+  Class = rep(c("Class A", "Class B", "Class C", "Class D"), each = 10),
+  Score = c(85, 90, 78, 92, 88, 76, 95, 89, 84, 91,   
+            87, 82, 90, 93, 88, 85, 77, 94, 80, 79,   
+            65, 70, 68, 72, 74, 66, 75, 69, 73, 71,   
+            55, 60, 58, 62, 64, 56, 65, 59, 63, 61)
+)
+quartiles <- quantile(exam_scores$Score, probs = c(0.25, 0.5, 0.75))
+cat("Q1 (25th percentile):", quartiles[1], "\n")
+cat("Median (50th percentile):", quartiles[2], "\n")
+cat("Q3 (75th percentile):", quartiles[3], "\n")
+ggplot(exam_scores, aes(x = Class, y = Score, fill = Class)) +
+  geom_boxplot() +
+  labs(title = "Exam Score Distribution by Class",
+       x = "Class",
+       y = "Score") +
+  theme_minimal()
