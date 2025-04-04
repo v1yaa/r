@@ -1,0 +1,15 @@
+library(ggplot2)
+data("pressure")
+ggplot(data = pressure, aes(x = temperature, y = pressure)) +
+  geom_line(color = "steelblue", size = 1) +
+  geom_point(color = "deeppink", size = 2) +
+  ggtitle("Line Chart of Pressure vs Temperature") +
+  xlab("Temperature (°C)") +
+  ylab("Pressure (mm of Mercury)") +
+  theme_minimal()
+ggplot(data = pressure, aes(x = factor(temperature), y = pressure)) +
+  geom_bar(stat = "identity", fill = "tomato", color = "black") +
+  ggtitle("Bar Chart of Pressure vs Temperature") +
+  xlab("Temperature (°C)") +
+  ylab("Pressure (mm of Mercury)") +
+  theme_minimal()
