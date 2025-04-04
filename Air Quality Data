@@ -1,0 +1,6 @@
+data("airquality")
+is_df <- is.data.frame(airquality)
+print(paste("Is airquality a data frame? ", is_df))
+airquality_ordered <- airquality[order(airquality[,1], airquality[,2], na.last = TRUE), ]
+airquality_cleaned <- airquality_ordered[, !(names(airquality_ordered) %in% c("Solar.R", "Wind"))]
+print(head(airquality_cleaned))
