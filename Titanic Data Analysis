@@ -1,0 +1,26 @@
+if (!require(titanic)) install.packages("titanic", dependencies=TRUE)
+if (!require(ggplot2)) install.packages("ggplot2", dependencies=TRUE)
+if (!require(dplyr)) install.packages("dplyr", dependencies=TRUE)
+library(ggplot2)  
+library(dplyr)    
+library(titanic)  
+titanic_data <- titanic::titanic_train 
+titanic_data$Survived <- as.factor(titanic_data$Survived)
+titanic_data$Pclass <- as.factor(titanic_data$Pclass)
+titanic_data$Sex <- as.factor(titanic_data$Sex)
+ggplot(titanic_data, aes(x = Pclass, fill = Survived)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Survival Count by Passenger Class",
+       x = "Passenger Class", y = "Count") +
+  theme_minimal()
+ggplot(titanic_data, aes(x = Pclass, fill = Survived)) +
+  geom_bar(position = "dodge") +
+  facet_wrap(~Sex) +  
+  labs(title = "Survival Count by Passenger Class and Gender",
+       x = "Passenger Class", y = "Count") +
+  theme_minimal()
+ggplot(titanic_data, aes(x = Age)) +
+  geom_histogram(binwidth = 5, fill = "peachpuff", color = "black", alpha = 0.7, na.rm = TRUE) +
+  labs(title = "Distribution of Age on the Titanic",
+       x = "Age", y = "Frequency") +
+  theme_minimal()
