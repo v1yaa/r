@@ -1,0 +1,14 @@
+library(ggcorrplot)
+set.seed(123)
+data <- data.frame(
+  Variable_A = rnorm(100, mean = 50, sd = 10),
+  Variable_B = rnorm(100, mean = 30, sd = 5),
+  Variable_C = rnorm(100, mean = 75, sd = 15),
+  Variable_D = rnorm(100, mean = 60, sd = 8)
+)
+cor_matrix <- cor(data)
+ggcorrplot(cor_matrix, method = "square", type = "lower",  # "square" or "circle"
+           lab = TRUE, lab_size = 3, 
+           colors = c("palegreen", "white", "lightpink"),
+           title = "Correlation Matrix Heatmap",
+           ggtheme = theme_minimal())
