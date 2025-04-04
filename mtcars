@@ -1,0 +1,13 @@
+data(mtcars)
+mean_mpg <- mean(mtcars$mpg)
+median_mpg <- median(mtcars$mpg)
+get_mode <- function(v) {
+  uniq_vals <- unique(v)
+  freq <- table(v)
+  mode_vals <- uniq_vals[freq == max(freq)]
+  return(mode_vals)
+}
+mode_mpg <- get_mode(mtcars$mpg)
+cat("Mean MPG:", mean_mpg, "\n")
+cat("Median MPG:", median_mpg, "\n")
+cat("Mode MPG:", mode_mpg, "\n")
