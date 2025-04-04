@@ -1,0 +1,9 @@
+patients <- c("John", "Emma", "John", "Michael", "Emma", "John", "Michael")
+treatments <- c("Aspirin", "Ibuprofen", "Aspirin", "Paracetamol", "Ibuprofen", "Paracetamol", "Paracetamol")
+df <- data.frame(Patient = patients, Treatment = treatments)
+duplicates <- df[duplicated(df), ]  # Find duplicate rows
+unique_treatments <- unique(df)  # Get unique patient-treatment combinations
+cat("Duplicated Treatments Administered:\n")
+print(duplicates)
+cat("\nUnique Patient-Treatment Combinations:\n")
+print(unique_treatments)
