@@ -1,0 +1,25 @@
+12. Statistical measures
+library(dplyr)
+performance_scores <- c(85, 90, 78, 92, 88, 76, 95, 89, 84, 91, 
+                        87, 82, 90, 93, 88, 85, 77, 94, 80, 79)
+get_mode <- function(v) {
+  uniq_vals <- unique(v)
+  freq <- table(v)
+  mode_vals <- uniq_vals[freq == max(freq)]
+  return(mode_vals)
+}
+data <- data.frame(Performance_Scores = performance_scores)
+summary_stats <- data %>%
+  summarise(
+    Mean = mean(Performance_Scores),
+    Median = median(Performance_Scores),
+    Mode = toString(get_mode(Performance_Scores)),
+    Minimum = min(Performance_Scores),
+    Maximum = max(Performance_Scores),
+    Range = max(Performance_Scores) - min(Performance_Scores),
+    Q1 = quantile(Performance_Scores, 0.25),
+    Q3 = quantile(Performance_Scores, 0.75),
+    Variance = var(Performance_Scores),	
+    Standard_Deviation = sd(Performance_Scores)
+  )
+print(summary_stats)
