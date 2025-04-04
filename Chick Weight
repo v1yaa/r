@@ -1,0 +1,10 @@
+data(ChickWeight)
+sd_weight <- sd(ChickWeight$weight)
+cat("Standard Deviation of Chickens' Weights:", sd_weight, "\n")
+cat("The ChickWeight dataset does not contain gender information.\n")
+heaviest_chicken <- ChickWeight[which.max(ChickWeight$weight), ]
+cat("Heaviest Chicken:\n")
+print(heaviest_chicken)
+chick_count_by_age <- table(ChickWeight$Time)
+cat("Number of Chickens in Each Age Group:\n")
+print(chick_count_by_age)
