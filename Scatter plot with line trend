@@ -1,0 +1,13 @@
+library(ggplot2)
+set.seed(123)  
+data <- data.frame(
+  X_Variable = c(10, 15, 20, 25, 30, 35, 40, 45, 50, 55),  
+  Y_Variable = c(22, 29, 35, 45, 50, 60, 65, 72, 78, 85)   
+)
+ggplot(data, aes(x = X_Variable, y = Y_Variable)) +
+  geom_point(color = "mediumturquoise", size = 3) + 
+  geom_smooth(method = "lm", se = FALSE, color = "deeppink") +  
+  labs(title = "Scatter Plot of X_Variable vs. Y_Variable",
+       x = "X Variable",
+       y = "Y Variable") +
+  theme_minimal()
