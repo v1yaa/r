@@ -1,0 +1,17 @@
+if (!require(dplyr)) install.packages("dplyr", dependencies=TRUE)
+library(dplyr)
+salary_data <- data.frame(
+  Employee_ID = 1:15,  # Employee IDs
+  Salary = c(50000, 52000, 48000, 55000, 60000, 58000, 62000, 49000, 
+             51000, 57000, 54000, 59000, 56000, 53000, 60000)  # Salaries
+)
+mean_salary <- mean(salary_data$Salary)
+median_salary <- median(salary_data$Salary)
+get_mode <- function(x) {
+  unique_x <- unique(x)
+  unique_x[which.max(tabulate(match(x, unique_x)))]
+}
+mode_salary <- get_mode(salary_data$Salary)
+cat("Mean Salary: ", mean_salary, "\n")
+cat("Median Salary: ", median_salary, "\n")
+cat("Mode Salary: ", mode_salary, "\n")
