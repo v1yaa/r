@@ -1,0 +1,19 @@
+assign_grade <- function(score) {
+  if (score >= 90 && score <= 100) {
+    return("A")
+  } else if (score >= 80) {
+    return("B")
+  } else if (score >= 70) {
+    return("C")
+  } else if (score >= 60) {
+    return("D")
+  } else {
+    return("F")
+  }
+}
+score <- as.integer(readline("Enter the score: "))
+if (is.na(score) || score < 0 || score > 100) {
+  cat("Error: Please enter a valid score between 0 and 100.\n")
+} else {
+  cat("Grade:", assign_grade(score), "\n")
+}
