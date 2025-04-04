@@ -1,0 +1,9 @@
+data <- data.frame(
+  ID = c(1, 2, 3, 4),
+  Name = c("Alice", "Bob", "Charlie", "David"),
+  Age = c(25, 30, 35, 40),
+  Score = c(90, 85, 88, 92)
+)
+write.csv(data, "sample_data.csv", row.names = FALSE)
+read_data <- read.csv("sample_data.csv")
+print(read_data)
