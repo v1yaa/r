@@ -1,0 +1,9 @@
+data("airquality")
+if (is.data.frame(airquality)) {
+  cat("The airquality dataset is a data frame.\n")
+} else {
+  cat("The airquality dataset is NOT a data frame.\n")
+}
+ordered_airquality <- airquality[order(airquality$Ozone, airquality$Solar.R, na.last = TRUE), ]
+modified_airquality <- subset(ordered_airquality, select = -c(Solar.R, Wind))
+print(head(modified_airquality))
