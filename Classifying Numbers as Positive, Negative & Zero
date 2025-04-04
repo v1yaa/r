@@ -1,0 +1,15 @@
+classify_numbers <- function(vec) {
+  result <- sapply(vec, function(x) {
+    if (x > 0) {
+      return("positive")
+    } else if (x < 0) {
+      return("negative")
+    } else {
+      return("zero")
+    }
+  })
+  return(result)
+}
+num_vector <- c(-3, 5, 0, -7, 2, 0, 8)
+classified_vec <- classify_numbers(num_vector)
+print(classified_vec)
