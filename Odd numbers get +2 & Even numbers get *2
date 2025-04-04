@@ -1,0 +1,15 @@
+ math_operation <- function(x, multiplier = 2) {
+  if (x %% 2 == 0) {
+    result <- x * multiplier  
+  } else {
+    result <- x + multiplier  
+  }
+ 
+| return(list(Number = x, Result = result))  
+}
+num_vector <- c(3, 6, 9)
+results <- list()
+for (i in num_vector) {
+  results[[as.character(i)]] <- math_operation(i)  
+}
+print(results)
