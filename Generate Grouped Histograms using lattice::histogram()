@@ -1,0 +1,15 @@
+library(lattice)
+set.seed(123)  
+data <- data.frame(
+  Group = rep(c("Male", "Female"), each = 50), 
+  Score = c(rnorm(50, mean = 75, sd = 10), 
+            rnorm(50, mean = 80, sd = 12)) 
+)
+histogram(~Score | Group,  
+          data = data,
+          col = "mediumpurple",  
+          border = "black",   
+          main = "Histogram of Scores by Group", 
+          xlab = "Scores", 
+          ylab = "Frequency", 
+          layout = c(1, 2))
