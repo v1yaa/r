@@ -1,0 +1,7 @@
+sum_recursive <- function(vec) {
+  if (length(vec) == 0) return(0)  
+  return(vec[1] + sum_recursive(vec[-1]))  
+}
+sample_vec <- c(3, 5, 7, 2, 8)
+result <- sum_recursive(sample_vec)
+cat("Sum of the vector:", result, "\n")
