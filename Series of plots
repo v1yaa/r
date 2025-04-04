@@ -1,0 +1,28 @@
+library(ggplot2)
+library(gridExtra)  
+sales_data <- data.frame(
+  Products_Sold = c(50, 60, 45, 70, 90, 30, 80, 100, 55, 75),
+  Price = c(20, 18, 22, 15, 12, 25, 14, 10, 19, 13)  # Product price per unit
+)
+hist_products <- ggplot(sales_data, aes(x = Products_Sold)) +
+  geom_histogram(binwidth = 10, fill = "blue", color = "black", alpha = 0.7) +
+  labs(title = "Distribution of Products Sold", x = "Products Sold", y = "Count") +
+  theme_minimal()
+hist_prices <- ggplot(sales_data, aes(x = Price)) +
+  geom_histogram(binwidth = 2, fill = "green", color = "black", alpha = 0.7) +
+  labs(title = "Distribution of Product Prices", x = "Price per Unit", y = "Count") +
+  theme_minimal()
+boxplot_products <- ggplot(sales_data, aes(y = Products_Sold)) +
+  geom_boxplot(fill = "blue", alpha = 0.5) +
+  labs(title = "Boxplot of Products Sold", y = "Products Sold") +
+  theme_minimal()
+boxplot_prices <- ggplot(sales_data, aes(y = Price)) +
+  geom_boxplot(fill = "green", alpha = 0.5) +
+  labs(title = "Boxplot of Product Prices", y = "Price per Unit") +
+  theme_minimal()
+scatter_plot <- ggplot(sales_data, aes(x = Price, y = Products_Sold)) +
+  geom_point(color = "red", size = 3) +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +  # Trend line
+  labs(title = "Price vs Products Sold", x = "Price per Unit", y = "Products Sold") +
+  theme_minimal()
+grid.arrange(hist_products, hist_prices, boxplot_products, boxplot_prices, scatter_plot, ncol = 2)
