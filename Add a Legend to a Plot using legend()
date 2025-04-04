@@ -1,0 +1,15 @@
+set.seed(123)
+x <- 1:10
+y1 <- x * 2 + rnorm(10, sd = 2) 
+y2 <- x * 3 + rnorm(10, sd = 2) 
+plot(x, y1, type = "o", col = "mediumorchid", pch = 16, lty = 1, ylim = c(min(y1, y2), max(y1, y2)),
+     xlab = "X Values", ylab = "Y Values", main = "Plot with Legend")
+
+lines(x, y2, type = "o", col = "darkred", pch = 17, lty = 2)  
+legend("topleft", 
+       legend = c("Line 1 (y = 2x)", "Line 2 (y = 3x)"), 
+       col = c("mediumorchid", "darkred"), 
+       pch = c(16, 17), 
+       lty = c(1, 2),  
+       title = "Legend",  
+       bg = "lightgray")
