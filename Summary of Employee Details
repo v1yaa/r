@@ -1,0 +1,12 @@
+employees <- data.frame(
+  EmployeeID = c(101, 102, 103, 104, 105),
+  Name = c("John", "Alice", "David", "Maria", "Tom"),
+  Age = c(28, 34, 26, 31, 29),
+  Department = c("HR", "Finance", "IT", "Marketing", "IT"),
+  Salary = c(50000, 60000, 55000, 58000, 53000),
+  stringsAsFactors = FALSE
+)
+print("Employee Data Frame:")
+print(employees)
+print("Summary of Employee Data:")
+summary(employees)
